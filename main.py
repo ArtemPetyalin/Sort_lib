@@ -18,7 +18,7 @@ def selection_sort(listium):
             minimus = listium[j]
 
             if listium[j] < minimus:
-                mnimus = listium[j]
+                minimus = listium[j]
 
         listium[i] = minimus
 
@@ -41,16 +41,27 @@ def insertion_sort(listus):
 
     return listus
 
+def quick_sort(l):
+    result = []
 
-def quick_sort(listofor):
-    from random import randint
-    a = listofor[randint(0, len(listofor))]
-    less_arr = []
-    bigger_arr = []
-    for i in range(len(listofor)):
+    def sorter(listofor):
+        import random
+        a = random.choice(listofor)
+        less_arr = []
+        bigger_arr = []
+        for i in range(len(listofor)):
 
-        if listofor[i] >= a:
-            bigger_arr.append(listofor[i])
+            if listofor[i] >= a:
+                bigger_arr.append(listofor[i])
 
-        else:
-            less_arr.append(listofor[i])
+            else:
+                less_arr.append(listofor[i])
+
+        less_arr.append(a)
+        result = less_arr + bigger_arr
+        less_arr.pop(-1)
+
+
+
+
+
