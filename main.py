@@ -42,24 +42,37 @@ def insertion_sort(listus):
     return listus
 
 def quick_sort(l):
-    result = []
 
+    if len(l) <= 1:
+        return l
+
+    indexer = []
+    counter = 1
     def sorter(listofor):
         import random
-        a = random.choice(listofor)
-        less_arr = []
-        bigger_arr = []
-        for i in range(len(listofor)):
 
-            if listofor[i] >= a:
-                bigger_arr.append(listofor[i])
+        if len(listofor) > 1:
+            a = random.choice(listofor)
+            less_arr = []
+            bigger_arr = []
+            for i in range(len(listofor)):
 
-            else:
-                less_arr.append(listofor[i])
+                if listofor[i] >= a:
+                    bigger_arr.append(listofor[i])
 
-        less_arr.append(a)
-        result = less_arr + bigger_arr
-        less_arr.pop(-1)
+                else:
+                    less_arr.append(listofor[i])
+
+            less_arr.append(a)
+            result = less_arr + bigger_arr
+            less_arr.pop(-1)
+
+            index_inside = len(listofor) - len(bigger_arr)
+
+        return [a, index_inside]
+
+    for i in range(len(l) // 2 + 1):
+
 
 
 
